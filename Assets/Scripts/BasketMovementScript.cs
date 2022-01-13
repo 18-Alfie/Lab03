@@ -26,7 +26,17 @@ public class BasketMovementScript : MonoBehaviour
     }
 
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Healthy")
+        {
 
-    
+        }
+        else
+        {
+
+        }
+    }
+
 
 }
