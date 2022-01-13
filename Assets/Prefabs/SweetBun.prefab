@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8903424835621722504}
   - component: {fileID: 862968565162533932}
   - component: {fileID: 2872608018284700952}
+  - component: {fileID: 7805330140025297575}
   m_Layer: 0
   m_Name: SweetBun
   m_TagString: Unhealthy
@@ -47,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -58,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -106,3 +109,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.3, y: 11.04, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7805330140025297575
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289304840690337601}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
