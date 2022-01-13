@@ -29,17 +29,7 @@ public class BasketMovementScript : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Healthy")
-        {
-            score++;
-        }
-        else if (other.gameObject.tag == "Unhealthy")
-        {
-
-        }
-    }
+    // Check if basket collides with object with Healthy or Unhealthy tag
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -52,6 +42,7 @@ public class BasketMovementScript : MonoBehaviour
         {
 
         }
+        Destroy(collision.gameObject);
     }
 
 
