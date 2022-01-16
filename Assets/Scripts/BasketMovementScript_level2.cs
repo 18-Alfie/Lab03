@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BasketMovementScript : MonoBehaviour
+public class BasketMovementScript_level2 : MonoBehaviour
 {
     public float score = 0;
     public float speed;
 
     public Text scoreText;
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,19 +21,18 @@ public class BasketMovementScript : MonoBehaviour
     void Update()
     {
 
-      float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
 
-      transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
+        transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
 
 
         // Checks if score is 100
         if (score >= 100)
         {
-
-            // Game goes to level 2 when score is 100
-            SceneManager.LoadScene("GamePlay_Level 2");
+            // Game goes to win scene when score is 100
+            SceneManager.LoadScene("GameWinScene");
         }
-       
+
 
     }
 
@@ -43,7 +42,7 @@ public class BasketMovementScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Healthy"))
         {
-            score+=10;
+            score += 10;
             scoreText.text = "Score: " + score;
         }
         else if (collision.gameObject.CompareTag("Unhealthy"))
