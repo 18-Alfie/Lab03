@@ -6,15 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Button to restart game
+    public void Restart()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene("GamePlay_Level 1");
     }
 }
