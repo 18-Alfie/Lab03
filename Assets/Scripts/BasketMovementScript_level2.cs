@@ -8,18 +8,29 @@ public class BasketMovementScript_level2 : MonoBehaviour
 {
     public float score = 0;
     public float speed;
+    public float timer;
 
     public Text scoreText;
+    public Text timerText;
 
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text = "Score: " + score;
+        timerText.text = "Timer: " + timer;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
+        timerText.text = "Timer: " + Mathf.RoundToInt(timer);
+
+        if (timer <= 0)
+        {
+            SceneManager.LoadScene("GameLoseScene");
+        }
+
 
         float horizontalInput = Input.GetAxis("Horizontal");
 
@@ -51,6 +62,5 @@ public class BasketMovementScript_level2 : MonoBehaviour
         }
         Destroy(collision.gameObject);
     }
-
 
 }

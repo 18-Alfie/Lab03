@@ -15,7 +15,7 @@ public class ObjectMovement : MonoBehaviour
         }
         else if (SceneManager.GetSceneByName("GamePlay_Level 2").isLoaded)
         {
-            ySpeed = -7.5f;
+            ySpeed = -6.5f;
         }
     }
 
