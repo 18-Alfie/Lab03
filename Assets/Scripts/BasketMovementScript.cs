@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BasketMovementScript : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class BasketMovementScript : MonoBehaviour
 
       transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
 
-        
+        if (score >= 100)
+        {
+            SceneManager.LoadScene("GameWinScene");
+        }
        
 
     }
@@ -40,7 +44,7 @@ public class BasketMovementScript : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Unhealthy"))
         {
-
+            SceneManager.LoadScene("GameLoseScene");
         }
         Destroy(collision.gameObject);
     }
