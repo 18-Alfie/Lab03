@@ -13,11 +13,18 @@ public class BasketMovementScript_level2 : MonoBehaviour
     public Text scoreText;
     public Text timerText;
 
+    AudioSource healthyCollect;
+    AudioSource unhealthyCollect;
+
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text = "Score: " + score;
-        timerText.text = "Timer: " + timer;
+
+        AudioSource[] audios = GetComponents<AudioSource>();
+
+        healthyCollect = audios[0];
+        unhealthyCollect = audios[1];
     }
 
     // Update is called once per frame
@@ -53,11 +60,13 @@ public class BasketMovementScript_level2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Healthy"))
         {
+            healthyCollect.Play();
             score += 10;
             scoreText.text = "Score: " + score;
         }
         else if (collision.gameObject.CompareTag("Unhealthy"))
         {
+            unhealthyCollect.Play();
             SceneManager.LoadScene("GameLoseScene");
         }
         Destroy(collision.gameObject);

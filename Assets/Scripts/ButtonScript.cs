@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
+
+
+    private void Start()
+    {
+      
+    }
+
     // Button to restart game
     public void Restart()
     {
